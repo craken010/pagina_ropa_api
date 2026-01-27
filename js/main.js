@@ -5,11 +5,13 @@ fetch("https://fakestoreapi.com/products")
   .then(productos => {
     productos.forEach(producto => {
       const article = document.createElement("article");
-      article.innerHTML =
-        `<h2>${producto.title}</h2>
-        <p>Precio: $${producto.price}</p>
-      `;
-     contenedorProductos.appendChild(article);
+      article.classList.add("producto");
+      article.innerHTML = `
+        <img src="${producto.image}" alt="${producto.title}">
+        <h2 class="titulo">${producto.title}</h2>
+        <p class="precio">$${producto.price}</p>`;
+        
+      contenedorProductos.appendChild(article);
     });
   });
 
