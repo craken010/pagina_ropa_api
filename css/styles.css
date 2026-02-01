@@ -32,12 +32,15 @@ p {
 }
 
 .producto {
+
+  display: flex;
+  flex-direction: column;
   border: 1px solid #e5e5e5;
   padding: 14px;
   text-align: center;
   border-radius: 12px;
-  background: #fff;
-  transition: 
+  background: #fefeff;
+  transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
@@ -60,8 +63,8 @@ p {
 }
 
 .btn-detalle {
-  margin-top: 10px;
-  padding: 8px 14px;
+  margin-top: auto;
+  padding: 7px 14px;
   border: none;
   border-radius: 8px;
   background: #111827;
@@ -123,6 +126,7 @@ p {
     transform: scale(0.95);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -164,5 +168,3 @@ p {
   font-weight: bold;
   margin-top: 5px;
 }
-
-
