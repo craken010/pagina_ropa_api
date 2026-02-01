@@ -13,25 +13,27 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1 class="titulo-principal">Tienda de Ropa</h1>
-    </header>
+<header class="header">
+  <div class="contenedor">
+    <div class="header-top">
+      <h1 class="titulo-principal">Tienda de Ropa</h1>
+
+      <select id="filtroCategoria" class="filtro">
+        <option value="all">Todas</option>
+        <option value="men's clothing">Hombre</option>
+        <option value="women's clothing">Mujer</option>
+        <option value="electronics">Electrónica</option>
+        <option value="jewelery">Joyería</option>
+      </select>
+    </div>
+  </div>
+</header>
     <main>
-        <p id="cargando">Cargando productos...</p>
+   <p id="cargando">Cargando productos...</p>
 
-        <select id="filtroCategoria">
-            <option value="all">Todas</option>
-            <option value="men's clothing">Hombre</option>
-            <option value="women's clothing">Mujer</option>
-            <option value="electronics">Electrónica</option>
-            <option value="jewelery">Joyería</option>
-        </select>
-
-
-        <section id="productos">
-
-
-        </section>
+  <div class="contenedor">
+    <section id="productos"></section>
+  </div>
     </main>
     <footer>
         <p>© 2026 - Tienda de Ropa</p>

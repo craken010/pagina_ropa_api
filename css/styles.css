@@ -6,11 +6,41 @@
   padding: 16px;
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 .titulo-principal {
   font-size: 32px;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 12px;
+}
+
+.filtro {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.filtro:hover {
+  border-color: #000;
+}
+
+.filtro:focus {
+  outline: none;
+  border-color: #000;
 }
 
 body {
