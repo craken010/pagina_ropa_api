@@ -1,9 +1,28 @@
+:root {
+  --bg-main: #f4f4f5;
+  --card-bg: #ffffff;
+  --primary: #111111;
+  --secondary: #6b7280;
+  --border: #e5e7eb;
+}
+
 * {
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: var(--bg-main);
+  color: #222;
+}
+
+/* Header */
+
 .header {
-  padding: 16px;
+  padding: 16px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border);
 }
 
 .header-top {
@@ -21,34 +40,33 @@
 .titulo-principal {
   font-size: 32px;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
+
+/* Filtro */
 
 .filtro {
   padding: 8px 14px;
   font-size: 14px;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  background-color: #fff;
+  border: 1px solid var(--border);
+  background-color: #ffffff;
+  color: #222;
   cursor: pointer;
+  min-width: 160px;
 }
 
 .filtro:hover {
-  border-color: #000;
+  border-color: var(--primary);
 }
 
 .filtro:focus {
   outline: none;
-  border-color: #000;
+  border-color: var(--primary);
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-  color: #222;
-}
+/* Tipografía general */
 
 h1 {
   font-size: 28px;
@@ -65,32 +83,33 @@ p {
   font-weight: 400;
 }
 
+/* Grid de productos */
+
 #productos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  gap: 20px;
+  padding: 24px 16px;
 }
 
-.producto {
+/* Tarjeta */
 
+.producto {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e5e5e5;
   padding: 14px;
   text-align: center;
   border-radius: 12px;
-  background: #fefeff;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .producto:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
-
 
 .producto img {
   width: 100%;
@@ -103,38 +122,12 @@ p {
   transform: scale(1.05);
 }
 
-.btn-detalle {
-  margin-top: auto;
-  padding: 7px 14px;
-  border: none;
-  border-radius: 8px;
-  background: #111827;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.btn-detalle:hover {
-  background: #1f2937;
-  transform: scale(1.05);
-}
-
 .titulo {
   font-size: 16px;
   margin: 8px 0;
   line-height: 1.3;
-  height: 2.6em; /* 2 líneas */
+  height: 2.6em;
   overflow: hidden;
-}
-
-.categoria {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 12px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .precio {
@@ -142,11 +135,41 @@ p {
   margin: 6px 0;
 }
 
+.categoria {
+  font-size: 13px;
+  color: var(--secondary);
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Botón */
+
+.btn-detalle {
+  margin-top: auto;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-detalle:hover {
+  background-color: #1f2937;
+  transform: scale(1.05);
+}
+
+/* Footer */
+
 .footer {
   margin-top: 60px;
   padding: 32px 0;
-  background-color: #111;
-  color: #ccc;
+  background-color: #111111;
+  color: #9ca3af;
 }
 
 .footer-contenido {
@@ -162,9 +185,9 @@ p {
     text-align: center;
   }
 }
- 
 
-/* Fondo oscuro */
+/* Modal */
+
 .modal {
   position: fixed;
   top: 0;
@@ -178,38 +201,33 @@ p {
   z-index: 1000;
 }
 
-/* Oculto */
 .oculto {
   display: none;
 }
 
-/* Caja del modal */
 .modalContenido {
-  background: #fff;
+  background-color: #ffffff;
   width: 90%;
   max-width: 500px;
   max-height: 85vh;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   position: relative;
   overflow-y: auto;
   animation: aparecer 0.3s ease;
 }
 
-/* Animación sutil */
 @keyframes aparecer {
   from {
     transform: scale(0.95);
     opacity: 0;
   }
-
   to {
     transform: scale(1);
     opacity: 1;
   }
 }
 
-/* Botón cerrar */
 .cerrar {
   position: absolute;
   top: 10px;
@@ -218,14 +236,12 @@ p {
   font-weight: bold;
   cursor: pointer;
   color: #333;
-  z-index: 10;
 }
 
 .cerrar:hover {
-  color: red;
+  color: #e11d48;
 }
 
-/* Imagen controlada */
 #modalImagen {
   width: 100%;
   max-height: 250px;
@@ -234,7 +250,6 @@ p {
   margin: 0 auto 15px;
 }
 
-/* Texto */
 #modalTitulo {
   margin-bottom: 10px;
 }
