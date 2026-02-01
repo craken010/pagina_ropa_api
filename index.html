@@ -14,14 +14,15 @@
     </header>
     <main>
         <p id="cargando">Cargando productos...</p>
-        
+
         <select id="filtroCategoria">
             <option value="all">Todas</option>
-            <option value="men's clothing">Ropa Hombre</option>
-            <option value="women's clothing">Ropa Mujer</option>
+            <option value="men's clothing">Hombre</option>
+            <option value="women's clothing">Mujer</option>
             <option value="electronics">Electrónica</option>
             <option value="jewelery">Joyería</option>
         </select>
+
 
         <section id="productos">
 
@@ -32,7 +33,20 @@
         <p>© 2026 - Tienda de Ropa</p>
     </footer>
 
+<div id="modal" class="modal oculto">
+  <div id="modalContenido" class="modalContenido">
+    <span id="cerrarModal" class="cerrar">&times;</span>
+
+    <img id="modalImagen" alt="">
+    <h2 id="modalTitulo"></h2>
+    <p id="modalPrecio"></p>
+    <p id="modalCategoria"></p>
+  </div>
+</div>
+
+
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

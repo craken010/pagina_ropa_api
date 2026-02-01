@@ -3,6 +3,10 @@ const contenedorProductos = document.getElementById("productos");
 const cargandoTexto = document.getElementById("cargando");
 const filtroCategoria = document.getElementById("filtroCategoria");
 
+const modal = document.getElementById("modal");
+const modalContenido = document.getElementById("modalContenido");
+const cerrarModalBtn = document.getElementById("cerrarModal");
+
 //  Variable global para guardar los productos
 // Esto permite reutilizarlos sin volver a hacer fetch
 let productos = [];
@@ -21,11 +25,30 @@ function mostrarProductos(lista) {
       <h2 class="titulo">${producto.title}</h2>
       <p class="precio">$${producto.price}</p>
       <p class="categoria">${producto.category}</p>
-    `;
+      <button class="btn-detalle">Ver detalle</button>
+`;
+
+    article.querySelector(".btn-detalle").addEventListener("click", () => {
+      abrirModal(producto);
+    });
 
     contenedorProductos.appendChild(article);
   });
 }
+
+//funsion abrir modal
+function abrirModal(producto) {
+  document.getElementById("modalImagen").src = producto.image;
+  document.getElementById("modalImagen").alt = producto.title;
+
+  document.getElementById("modalTitulo").textContent = producto.title;
+  document.getElementById("modalPrecio").textContent = "Precio: $" + producto.price;
+  document.getElementById("modalCategoria").textContent = "Categoría: " + producto.category;
+
+  modal.classList.remove("oculto");
+}
+
+
 
 //  Fetch: traer los datos de la API
 fetch("https://fakestoreapi.com/products")
@@ -50,6 +73,11 @@ fetch("https://fakestoreapi.com/products")
     console.error(error);
   });
 
+// evento cerrar modal 
+cerrarModalBtn.addEventListener("click", () => {
+  modal.classList.add("oculto");
+});
+
 //  Evento del filtro
 filtroCategoria.addEventListener("change", () => {
   const categoriaSeleccionada = filtroCategoria.value;
@@ -61,7 +89,9 @@ filtroCategoria.addEventListener("change", () => {
       producto.category === categoriaSeleccionada
     );
     mostrarProductos(productosFiltrados);
+
   }
+
 });
 
 
