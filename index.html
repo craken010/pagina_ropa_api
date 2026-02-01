@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Ropa </title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header>
-         <h1>Tienda de Ropa</h1>
+        <h1>Tienda de Ropa</h1>
     </header>
     <main>
         <p id="cargando">Cargando productos...</p>
+        
+        <select id="filtroCategoria">
+            <option value="all">Todas</option>
+            <option value="men's clothing">Ropa Hombre</option>
+            <option value="women's clothing">Ropa Mujer</option>
+            <option value="electronics">Electrónica</option>
+            <option value="jewelery">Joyería</option>
+        </select>
+
         <section id="productos">
 
 
@@ -23,4 +34,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
