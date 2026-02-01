@@ -142,6 +142,27 @@ p {
   margin: 6px 0;
 }
 
+.footer {
+  margin-top: 60px;
+  padding: 32px 0;
+  background-color: #111;
+  color: #ccc;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .footer-contenido {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+ 
 
 /* Fondo oscuro */
 .modal {
