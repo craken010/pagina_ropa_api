@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+.header {
+  padding: 16px;
+}
+
+.titulo-principal {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
