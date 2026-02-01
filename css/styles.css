@@ -82,11 +82,25 @@ p {
 .titulo {
   font-size: 16px;
   margin: 8px 0;
+  line-height: 1.3;
+  height: 2.6em; /* 2 líneas */
+  overflow: hidden;
+}
+
+.categoria {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .precio {
   font-weight: bold;
+  margin: 6px 0;
 }
+
 
 /* Fondo oscuro */
 .modal {
